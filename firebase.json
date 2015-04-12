@@ -1,6 +1,6 @@
 {
   "firebase": "earnestkp",
-  "public": "app/",
+  "public": "app",
   "ignore": [
     "firebase.json",
     "**/.*",
