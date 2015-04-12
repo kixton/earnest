@@ -6,13 +6,13 @@ describe('Service: User', function () {
   beforeEach(module('earnestkpApp'));
 
   // instantiate service
-  var User;
-  beforeEach(inject(function (_User_) {
-    User = _User_;
-  }));
+  // var User;
+  // beforeEach(inject(function (_User_) {
+  //   User = _User_;
+  // }));
 
-  it('should do something', function () {
-    expect(!!User).toBe(true);
-  });
+  // it('should do something', function () {
+  //   expect(!!User).toBe(true);
+  // });
 
 });
