@@ -17,7 +17,9 @@ angular
     'ngSanitize',
     'ngTouch',
     'firebase',
-    'xeditable'
+    'xeditable',
+    'checklist-model',
+    'ui.bootstrap'
   ])
   .value('fbUsersURL', 'https://earnestkp.firebaseio.com/users')
   .value('fbRolesURL', 'https://earnestkp.firebaseio.com/roles')

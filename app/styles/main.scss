@@ -7,35 +7,84 @@ body {
   padding: 20px 0;
 }
 
-a,
-a:hover {
-  text-decoration: none;
+h1 {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-#main-container {
-  .role {
-    padding: 5px 10px;
-    margin: 0 5px;
-    color: #fff;
-    border-radius: 5px;
-    background: #e67e22;
-    &.user {
-      background: #1abc9c;
+/* Override Bootstrap styling */
+td, th {
+  vertical-align: inherit !important;
+}
+.btn-primary {
+  background: #444;
+  border-color: #333;
+  &:hover {
+    background: #333;
+    border-color: #222;
+  }
+}
+
+/* User icons and Edit buttons */
+.btn-edit {
+  border: 0;
+  background: none;
+  color: #999;
+  &:hover {
+    color: #333;
+  }
+}
+.role {
+  padding: 5px 10px;
+  margin-right: 5px;
+  color: #fff;
+  border-radius: 5px;
+  background: #95a5a6; /* Fallback color */
+  &.user {
+    background: #3498db;
+  }
+  &.superuser {
+    background: #9b59b6;
+  }
+  &.admin {
+    background: #1abc9c;
+  }
+  &.guest {
+    background: #f1c40f;
+  }
+}
+
+/* Main View */
+#main-view-container {
+  table {
+    thead {
+      height: 40px;
+      text-transform: uppercase;
+      &:hover {
+        background: transparent;
+      }
     }
-    &.superuser {
-      background: #9b59b6;
-    }
-    &.admin {
-      background: #3498db;
+    tbody {
+      .user-roles,
+      .edit-buttons {
+        white-space: nowrap;
+      }
     }
   }
 }
 
 /* Footer */
 .footer {
-  padding-top: 19px;
-  color: #777;
+  margin-top: 40px;
+  padding-top: 20px;
   border-top: 1px solid #e5e5e5;
+  a {
+    color: #777;
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 /* Responsive: Portrait tablets and up */
