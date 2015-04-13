@@ -10,8 +10,24 @@
 angular.module('earnestkpApp')
   .controller('MainCtrl', function ($scope, Users) {
     $scope.users = Users.fbObject;
+    $scope.roles = [
+      'guest', 
+      'user', 
+      'superuser', 
+      'admin'
+    ];
+    $scope.userRole = {};
+
+    $scope.addRole = function(role) {
+      if (!$scope.userRole[role]) {
+        $scope.userRole[role] = true;
+      } else {
+        delete $scope.userRole[role];
+      }
+    };
 
     $scope.editUser = function(data, id) {
+      console.log(data);
       $scope.users[id] = data;
       $scope.users.$save();
     };
@@ -19,7 +35,8 @@ angular.module('earnestkpApp')
     $scope.addUser = function() {
       Users.fbArray.$add({
         firstName: $scope.firstName,
-        lastName: $scope.lastName
+        lastName: $scope.lastName,
+        roles: $scope.userRole
       });
       // clear form input
       $scope.firstName = '';
@@ -29,4 +46,5 @@ angular.module('earnestkpApp')
     $scope.removeUser = function($index) {
       Users.fbArray.$remove($index);
     };
+
   });
