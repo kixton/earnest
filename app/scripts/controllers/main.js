@@ -8,10 +8,16 @@
  * Controller of the earnestkpApp
  */
 angular.module('earnestkpApp')
-  .controller('MainCtrl', function ($scope, User) {
-    $scope.user = User;
+  .controller('MainCtrl', function ($scope, Users) {
+    $scope.users = Users.fbObject;
+
+    $scope.editUser = function(data, id) {
+      $scope.users[id] = data;
+      $scope.users.$save();
+    };
+
     $scope.addUser = function() {
-      User.$add({
+      Users.fbArray.$add({
         firstName: $scope.firstName,
         lastName: $scope.lastName
       });
@@ -19,7 +25,8 @@ angular.module('earnestkpApp')
       $scope.firstName = '';
       $scope.lastName = '';
     };
-    $scope.removeUser = function (id) {
-      User.$remove(id);
+
+    $scope.removeUser = function($index) {
+      Users.fbArray.$remove($index);
     };
   });

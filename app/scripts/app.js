@@ -16,18 +16,18 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'firebase'
+    'firebase',
+    'xeditable'
   ])
   .value('fbUsersURL', 'https://earnestkp.firebaseio.com/users')
+  .run(function(editableOptions) {
+    editableOptions.theme = 'bs3'; // Bootstrap 3 theme
+  })
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
-      })
-      .when('/edituser/:id', {
-        templateUrl: 'views/edituser.html',
-        controller: 'EditUserCtrl'
       })
       .otherwise({
         redirectTo: '/'

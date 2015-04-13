@@ -8,6 +8,11 @@
  * Factory in the earnestkpApp.
  */
 angular.module('earnestkpApp')
-  .factory('User', function (fbUsersURL, $window, $firebaseArray) {
-    return $firebaseArray(new $window.Firebase(fbUsersURL));
+  .factory('Users', function (fbUsersURL, $window, $firebaseObject, $firebaseArray) {
+    var fbObject = $firebaseObject(new $window.Firebase(fbUsersURL));
+    var fbArray = $firebaseArray(new $window.Firebase(fbUsersURL));
+    return {
+      fbObject: fbObject,
+      fbArray: fbArray
+    };
   });

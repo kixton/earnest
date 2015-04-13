@@ -1,23 +1,44 @@
-<table class="table">
-  <thead>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>&nbsp;</th>
-    <th>&nbsp;</th>
-  </thead>
-  <tbody>
-    <tr ng-repeat="(id, user) in user">
-      <td>{{ user.firstName }}</td>
-      <td>{{ user.lastName }}</td>
+<table class="table table-bordered table-hover table-condensed">
+    <tr style="font-weight: bold">
+      <td>First Name</td>
+      <td>Last Name</td>
+      <td>Roles</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr ng-repeat="(id, user) in users">
       <td>
-        <a href="#/edituser/{{ user.$id }}"><span class="glyphicon glyphicon-edit"></span></a>
-      </t>
+        <span editable-text="user.firstName" e-name="firstName" e-form="rowform" e-required>
+          {{ user.firstName || 'empty' }}
+        </span>
+      </td>
       <td>
-        <a href="#" ng-click="removeUser(id)"><span class="glyphicon glyphicon-trash"></span></a>
+        <span editable-text="user.lastName" e-name="lastName" e-form="rowform" e-required>
+          {{ user.lastName || 'empty' }}
+        </span>
+      </td>
+      <td>
+          {{ user.group }}
+        </span>
+      </td>
+      <td style="white-space: nowrap">
+        <!-- form -->
+        <form editable-form name="rowform" onbeforesave="editUser($data, id)" ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == user">
+          <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary">
+            Save
+          </button>
+          <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-default">
+            Cancel
+          </button>
+        </form>
+        <div class="buttons" ng-show="!rowform.$visible">
+          <button class="btn btn-primary" ng-click="rowform.$show()">Edit</button>
+          <button class="btn btn-danger" ng-click="removeUser($index)">Delete</button>
+        </div>  
       </td>
     </tr>
-  </tbody>
-</table>
+  </table>
+
+<!-- <button class="btn btn-default" ng-click="addUser()">Add row</button> -->
 
 <form ng-submit="addUser()">
   <div class="form-group">
