@@ -55,9 +55,34 @@ td, th {
   }
 }
 
-/* Main View */
+/* Main view */
 #main-view-container {
   table {
+
+    input[type=checkbox] {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+      + span {
+        border: 1px solid #999;
+        border-radius: 5px;
+        padding: 7px 10px;
+        margin: 7px 5px 0 0;
+        font-weight: 500;
+        color: #999;
+        &:hover {
+          cursor: pointer;
+          cursor: hand;
+          color: #333;
+        }
+      }
+      &:checked {
+        + span {
+          background: #666;
+          color: #fff;
+        }
+      }
+    }
     thead {
       height: 40px;
       text-transform: uppercase;
@@ -69,6 +94,12 @@ td, th {
       .user-roles,
       .edit-buttons {
         white-space: nowrap;
+        .ng-scope {
+          margin: 0;
+        }
+      }
+      .edit-buttons {
+        text-align: right;
       }
     }
   }
