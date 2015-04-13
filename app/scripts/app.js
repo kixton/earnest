@@ -22,7 +22,6 @@ angular
     'ui.bootstrap'
   ])
   .value('fbUsersURL', 'https://earnestkp.firebaseio.com/users')
-  .value('fbRolesURL', 'https://earnestkp.firebaseio.com/roles')
   .run(function(editableOptions) {
     editableOptions.theme = 'bs3'; // Bootstrap 3 theme
   })

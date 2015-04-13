@@ -9,27 +9,25 @@
  */
 angular.module('earnestkpApp')
   .controller('MainCtrl', function ($scope, Users, $window) {
-
-  $scope.seedData = function() {
-    var ref = new $window.Firebase('https://earnestkp.firebaseio.com/users');
-    ref.push({
-      name : 'Louis Beryl',
-      roles : [1,2]
-    });
-    ref.push({
-      name : 'Brian Romanko',
-      roles : [2]
-    });
-    ref.push({
-      name : 'Scott Turnquest',
-      roles : [2,3]
-    });
-    console.log('clicked');
-  };
-
   $scope.users = Users.fbObject;
+  $scope.usersArr = Users.fbArray;
 
-  var usersCount = 3;
+  // $scope.seedData = function() {
+  //   var ref = new $window.Firebase('https://earnestkp.firebaseio.com/users');
+  //   ref.push({
+  //     name : 'Louis Beryl',
+  //     roles : [1,2]
+  //   });
+  //   ref.push({
+  //     name : 'Brian Romanko',
+  //     roles : [2]
+  //   });
+  //   ref.push({
+  //     name : 'Scott Turnquest',
+  //     roles : [2,3]
+  //   });
+  //   console.log('clicked');
+  // };
 
   $scope.roles = [
     {value: 1, text: 'User'},
@@ -38,10 +36,17 @@ angular.module('earnestkpApp')
     {value: 4, text: 'Guest'}
   ]; 
 
-  $scope.saveUser = function(data, id) {
-    console.log(data, id);
-    Users.fbArray[id] = data;
-    Users.fbArray.$save();
+  var ref = new $window.Firebase('https://earnestkp.firebaseio.com/users');
+  $scope.saveUser = function(data, id, $index) {
+    console.log($scope.users[id]);
+    $scope.usersArr[$index] = data;
+    $scope.usersArr.$save();
+    var list = $scope.usersArr;
+    list[$index] = data;
+    list.$save($index).then(function(ref) {
+      console.log(ref.key()); 
+      // ref.key() === list[$index].$id; // true
+    });
   };
 
   $scope.showRole = function(id) {
@@ -59,12 +64,11 @@ angular.module('earnestkpApp')
   };
 
   $scope.addUser = function() {
-    usersCount ++;
+    var key = ref.push().key();
     $scope.inserted = {
       name: '',
-      roles: null,
+      roles: '',
     };
-    $scope.users[usersCount] = $scope.inserted;
-  };
-
+    $scope.users[key] = $scope.inserted;
+    };
   });
