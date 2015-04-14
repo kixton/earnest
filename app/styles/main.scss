@@ -82,11 +82,9 @@ td, th {
       .user-roles,
       .edit-buttons {
         white-space: nowrap;
+        .ng-scope,
         .form-group,
         .editable-controls {
-          margin: 0;
-        }
-        .ng-scope {
           margin: 0;
         }
       }
