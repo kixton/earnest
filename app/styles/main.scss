@@ -7,18 +7,23 @@ body {
   padding: 20px 0;
 }
 
-h1 {
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+header {
+  text-align: center;
+  margin-bottom: 40px;
+  h1 {
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
 }
+
 
 /* Override Bootstrap styling */
 td, th {
   vertical-align: inherit !important;
 }
 .btn-primary {
-  background: #444;
+  background: #555;
   border-color: #333;
   &:hover {
     background: #333;
@@ -26,7 +31,7 @@ td, th {
   }
 }
 
-/* User icons and Edit buttons */
+/* User icons and buttons */
 .btn-edit {
   border: 0;
   background: none;
@@ -35,12 +40,24 @@ td, th {
     color: #333;
   }
 }
+.btn-create {
+  background: #999;
+  color: #fff;
+  &:hover {
+    background: #666;
+    color: #fff;
+  }
+}
 .role {
   padding: 5px 10px;
   margin-right: 5px;
   color: #fff;
   border-radius: 5px;
   background: #95a5a6; /* Fallback color */
+  &:hover {
+    color: #fff;
+    cursor: default;
+  }
   &.user {
     background: #3498db;
   }
@@ -58,7 +75,6 @@ td, th {
 /* Main view */
 #main-view-container {
   table {
-
     input[type=checkbox] {
       position: absolute;
       top: -9999px;
@@ -66,7 +82,7 @@ td, th {
       + span {
         border: 1px solid #999;
         border-radius: 5px;
-        padding: 7px 10px;
+        padding: 7px 9.5px;
         margin: 7px 5px 0 0;
         font-weight: 500;
         color: #999;
@@ -78,17 +94,16 @@ td, th {
       }
       &:checked {
         + span {
-          background: #666;
+          background: #888;
           color: #fff;
         }
       }
     }
     thead {
       height: 40px;
+      font-size: 120%;
       text-transform: uppercase;
-      &:hover {
-        background: transparent;
-      }
+      letter-spacing: 1px;
     }
     tbody {
       .user-roles,
@@ -102,6 +117,10 @@ td, th {
         text-align: right;
       }
     }
+  }
+  .add-user {
+    width: 100%;
+    text-align: right;
   }
 }
 
