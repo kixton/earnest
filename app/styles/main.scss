@@ -32,6 +32,14 @@ td, th {
   }
 }
 
+button {
+  outline: 0 !important;
+  border: none;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
 /* Role icons and buttons */
 .role {
   padding: 5px 10px;
