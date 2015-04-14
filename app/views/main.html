@@ -10,7 +10,7 @@
     <tbody>
       <tr ng-repeat="(id, user) in users">
         <td>
-          <span editable-text="user.name" e-name="name" e-form="rowform" e-required>
+          <span editable-text="user.name" e-name="name" e-form="rowform" e-required ng-hide="rowform.$visible">
             {{ user.name }}
           </span>
         </td>
@@ -19,7 +19,8 @@
             editable-checklist="user.roles"
             e-name="roles"
             e-form="rowform"
-            e-ng-options="role.value as role.text for role in roles">
+            e-ng-options="role.value as role.text for role in roles"
+            ng-hide="rowform.$visible">
             <span
               ng-repeat="role in showRole(id)"
               class="role {{ role | lowercase }} btn">
