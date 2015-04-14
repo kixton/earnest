@@ -79,14 +79,14 @@ td, th {
       letter-spacing: 1px;
     }
     tbody {
+      .ng-scope,
+      .form-group,
+      .editable-controls {
+        margin: 0 !important;
+      }
       .user-roles,
       .edit-buttons {
         white-space: nowrap;
-        .ng-scope,
-        .form-group,
-        .editable-controls {
-          margin: 0;
-        }
       }
       .edit-buttons {
         text-align: right;
