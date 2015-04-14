@@ -26,6 +26,11 @@ module.exports = function(config) {
       'bower_components/angular-route/angular-route.js',
       'bower_components/angular-sanitize/angular-sanitize.js',
       'bower_components/angular-touch/angular-touch.js',
+      'bower_components/firebase/firebase.js',
+      'bower_components/angularfire/dist/angularfire.js',
+      'bower_components/angular-xeditable/dist/js/xeditable.js',
+      'bower_components/checklist-model/checklist-model.js',
+      'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'app/scripts/**/*.js',
       // 'test/mock/**/*.js',
       'test/spec/**/*.js'
