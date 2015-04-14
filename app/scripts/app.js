@@ -19,7 +19,8 @@ angular
     'firebase',
     'xeditable',
     'checklist-model',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'angularModalService'
   ])
   .value('fbUsersURL', 'https://earnestkp.firebaseio.com/users')
   .value('fbRolesURL', 'https://earnestkp.firebaseio.com/roles')

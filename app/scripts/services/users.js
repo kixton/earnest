@@ -13,9 +13,6 @@ angular.module('earnestkpApp')
         return fbObject[id].name === '' && fbObject[id].roles.length === 0;
       },
       saveUser: function(data, id) {
-        console.log('clicked');
-        console.log(data);
-        console.log(id);
         ref.child(id).update(data);
       },
       removeUser: function(id) {

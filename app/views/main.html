@@ -41,10 +41,7 @@
           </form>
           <div ng-show="!rowform.$visible">
             <button class="btn btn-edit glyphicon glyphicon-edit" ng-click="rowform.$show()"></button>
-            <button class="btn btn-edit glyphicon glyphicon-trash"
-              ng-really-message="Are you sure you want to delete {{user.name}}?"
-              ng-really-click="removeUser(id)"
-            ></button>
+            <button class="btn btn-edit glyphicon glyphicon-trash" ng-click="showModal(id)"></button>
           </div>  
         </td>
       </tr>

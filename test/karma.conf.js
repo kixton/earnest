@@ -31,6 +31,7 @@ module.exports = function(config) {
       'bower_components/angular-xeditable/dist/js/xeditable.js',
       'bower_components/checklist-model/checklist-model.js',
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+      'bower_components/angular-modal-service/dst/angular-modal-service.min.js',
       'app/scripts/**/*.js',
       // 'test/mock/**/*.js',
       'test/spec/**/*.js'
