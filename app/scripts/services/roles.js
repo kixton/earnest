@@ -9,9 +9,11 @@ angular.module('earnestkpApp')
       fbArray: fbArray,
       userRoles: function(id) {
         var selected = [];
-        angular.forEach(fbArray, function(s) { 
-          if (Users.fbObject[id].roles.indexOf(s.value) >= 0) {
-            selected.push(s.text);
+        angular.forEach(fbArray, function(s) {
+          if (Users.fbObject[id].roles.length > 0) {
+            if (Users.fbObject[id].roles.indexOf(s.value) >= 0) {
+              selected.push(s.text);
+            }
           }
         });
         return selected;
