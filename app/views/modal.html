@@ -1,16 +1,16 @@
 <div class="modal fade">
   <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
+    <div class="modal-content panel-danger">
+      <div class="modal-header panel-heading">
         <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Confirm: Permanently Delete User?</h4>
+        <h4 class="modal-title">Confirm: Permanently delete user?</h4>
       </div>
       <div class="modal-body">
-        <p>Are you sure you want to delete user? This cannot be undone.</p>
+        <h5>Are you sure you want to delete user? This cannot be undone.</h5>
       </div>
       <div class="modal-footer">
         <button type="button" ng-click="close('No')" class="btn btn-default" data-dismiss="modal">No</button>
-        <button type="button" ng-click="close('Yes')" class="btn btn-primary" data-dismiss="modal">Yes</button>
+        <button type="button" ng-click="close('Yes')" class="btn btn-danger" data-dismiss="modal">Yes - Permanently delete user</button>
       </div>
     </div>
   </div>

@@ -19,6 +19,10 @@ header {
 td, th {
   vertical-align: inherit !important;
 }
+.panel-heading {
+  border-top-left-radius: inherit; 
+  border-top-right-radius: inherit;
+}
 .btn-primary {
   background: #555;
   border-color: #333;
