@@ -1,5 +1,5 @@
 # Earnest Users
-AngularJS application with Firebase as a backend. Ability to create, view, edit, delete users.
+AngularJS application with Firebase as a backend. [Earnest UI Coding Challenge](https://gist.github.com/alockwood05/6e7454267a1c35bc07fc) Ability to create, view, edit, delete users.
 
 Clone repo<br>
 `git clone https://github.com/kixton/earnest.git && cd earnest`
