@@ -32,15 +32,15 @@
           <form editable-form name="rowform" onbeforesave="saveUser($data, id)" ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == user">
             <button type="submit"
               ng-disabled="rowform.$waiting"
-              ng-class="isNewUser(id) ? 'btn btn-edit' : 'btn btn-edit fa fa-save'">
+              ng-class="isNewUser(id) ? 'btn btn-edit' : 'btn btn-edit glyphicon glyphicon-floppy-disk'">
               <span class="btn btn-xs btn-create" ng-show="isNewUser(id)">Create User</span>
             </button>
-            <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-edit fa fa-times">
+            <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-edit glyphicon glyphicon-remove">
             </button>
           </form>
           <div ng-show="!rowform.$visible">
-            <button class="btn btn-edit fa fa-pencil" ng-click="rowform.$show()"></button>
-            <button class="btn btn-edit fa fa-trash-o"
+            <button class="btn btn-edit glyphicon glyphicon-edit" ng-click="rowform.$show()"></button>
+            <button class="btn btn-edit glyphicon glyphicon-trash"
               ng-really-message="Are you sure you want to delete {{user.name}}?"
               ng-really-click="removeUser(id)"
             ></button>
@@ -51,7 +51,7 @@
   </table>
   <div class="container add-user">
     <button class="btn btn-primary" ng-click="addUser()">
-      <span class="fa fa-plus"></span> Add New User
+      <span class="glyphicon glyphicon-plus"></span> Add New User
     </button>
   </div>
 </div>
