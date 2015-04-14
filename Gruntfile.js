@@ -431,10 +431,10 @@ module.exports = function (grunt) {
     'ngmin',
     'copy:dist',
     'cdnify',
-    'cssmin',
-    'uglify',
     'filerev',
     'usemin',
+    'cssmin',
+    'uglify',
     'htmlmin'
   ]);
 
