@@ -15,7 +15,6 @@ header {
   }
 }
 
-
 /* Override Bootstrap styling */
 td, th {
   vertical-align: inherit !important;
@@ -29,23 +28,7 @@ td, th {
   }
 }
 
-/* User icons and buttons */
-.btn-edit {
-  border: 0;
-  background: none;
-  color: #999;
-  &:hover {
-    color: #333;
-  }
-}
-.btn-create {
-  background: #999;
-  color: #fff;
-  &:hover {
-    background: #666;
-    color: #fff;
-  }
-}
+/* Role icons and buttons */
 .role {
   padding: 5px 10px;
   margin-right: 5px;
@@ -69,13 +52,50 @@ td, th {
     background: #f1c40f;
   }
 }
+.btn-edit {
+  border: 0;
+  background: none;
+  color: #999;
+  &:hover {
+    color: #333;
+  }
+}
+.btn-create {
+  background: #999;
+  color: #fff;
+  &:hover {
+    background: #666;
+    color: #fff;
+  }
+}
 
 /* Main view */
 #main-view-container {
   table {
+    thead {
+      height: 40px;
+      font-size: 120%;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    tbody {
+      .user-roles,
+      .edit-buttons {
+        white-space: nowrap;
+        .editable-controls {
+          margin: 0;
+        }
+        .ng-scope {
+          margin: 0;
+        }
+      }
+      .edit-buttons {
+        text-align: right;
+      }
+    }
     input[type=checkbox] {
       position: absolute;
-      top: -9999px;
+      top: -9999px; /* move checkbox box off the window */
       left: -9999px;
       + span {
         border: 1px solid #999;
@@ -97,24 +117,7 @@ td, th {
         }
       }
     }
-    thead {
-      height: 40px;
-      font-size: 120%;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    tbody {
-      .user-roles,
-      .edit-buttons {
-        white-space: nowrap;
-        .ng-scope {
-          margin: 0;
-        }
-      }
-      .edit-buttons {
-        text-align: right;
-      }
-    }
+    
   }
   .add-user {
     width: 100%;
