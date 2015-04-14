@@ -2,17 +2,17 @@
 
 describe('Service: User', function () {
 
-  // load the service's module
   beforeEach(module('earnestkpApp'));
 
-  // instantiate service
-  // var User;
-  // beforeEach(inject(function (_User_) {
-  //   User = _User_;
-  // }));
+  var User;
+  beforeEach(inject(function (_User_) {
+    User = _User_;
+  }));
 
-  // it('should do something', function () {
-  //   expect(!!User).toBe(true);
-  // });
+  it('User.fbObject exists as an object', function () {
+    expect(!!User).toBe(true);
+    expect(User.fbObject).toBe(true);
+    expect(typeof User.fbObject).toBe('object');
+  });
 
 });

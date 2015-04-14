@@ -22,7 +22,7 @@
             e-ng-options="role.value as role.text for role in roles"
             ng-hide="rowform.$visible">
             <span
-              ng-repeat="role in showRole(id)"
+              ng-repeat="role in userRoles(id)"
               class="role {{ role | lowercase }} btn">
               {{ role }}
               </span>

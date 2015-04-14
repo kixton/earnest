@@ -6,13 +6,13 @@ describe('Service: Roles', function () {
   beforeEach(module('earnestkpApp'));
 
   // instantiate service
-  var Roles;
-  beforeEach(inject(function (_Roles_) {
-    Roles = _Roles_;
-  }));
+  // var Roles;
+  // beforeEach(inject(function (_Roles_) {
+  //   Roles = _Roles_;
+  // }));
 
-  it('should do something', function () {
-    expect(!!Roles).toBe(true);
-  });
+  // it('should do something', function () {
+  //   expect(!!Roles).toBe(true);
+  // });
 
 });
