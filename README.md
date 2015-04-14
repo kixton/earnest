@@ -5,7 +5,8 @@ Clone repo `git clone https://github.com/kixton/earnest.git && cd earnest`
 
 Install dependencies `npm install`
 
-Run bower `bower install`
+Run bower (version: jquery#~1.11.1, angular#1.2.16) `bower install`
 
 Start server `grunt serve`
 
+See application at `http://localhost:9000/`
